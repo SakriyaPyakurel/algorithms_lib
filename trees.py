@@ -97,3 +97,31 @@ class BTreeNode:
                 result += child.tree(level)
 
         return result
+class BST:
+    def __init__(self,data:int):
+        self.data = data 
+        self.left = None 
+        self.right = None 
+    def add(self,data:int):
+        if data == self.data:
+            raise Exception(f'node {data} is already present in the tree') 
+        if data < self.data:
+            if self.left:
+                self.left.add(data) 
+            else:
+                self.left = BST(data) 
+        else:
+            if self.right:
+                self.right.add(data) 
+            else:
+                self.right = BST(data) 
+    def inorder(self):
+        elements = [] 
+        if self.left:
+            elements+=self.left.inorder()
+        elements.append(self.data) 
+        if self.right:
+            elements+=self.right.inorder() 
+        return elements
+        
+        

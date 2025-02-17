@@ -1,4 +1,4 @@
-from trees import TreeNode 
+from trees import TreeNode,BST 
 root = TreeNode('Electronics') # Initializing a general tree root node 
 phone = TreeNode('Phone') 
 tv = TreeNode('tv') 
@@ -36,3 +36,12 @@ print(root.tree_dict(leave=False)) #{'Electronics': ['Phone', 'tv'], 'Phone': ['
 print(root.get_level()) #0
 print(phone.get_level()) #1
 print(motorola.get_level()) #2 
+# Binary Search Tree:
+search = BST(1) 
+search.add(17) 
+search.add(2)
+search.add(4) 
+search.add(3) 
+search.add(9) 
+search.add(21) 
+print(search.inorder())
