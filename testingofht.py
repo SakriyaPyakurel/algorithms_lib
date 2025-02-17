@@ -46,9 +46,4 @@ print(hash_probe)
 # 9
 # length:10               object:hashtable
 print(hash_no_probe.content) #{'aa': 'Hello', 'bb': 'everybody', 'ac': 'Hey'}
-print(hash_probe.content) #
-
-
-    
-
-
+print(hash_probe.content) # {'aa': 'Hello', 'bb': 'everybody', 'ac': 'Hey'}  
