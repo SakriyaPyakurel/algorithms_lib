@@ -98,11 +98,11 @@ class BTreeNode:
 
         return result
 class BST:
-    def __init__(self,data:int):
+    def __init__(self,data:int|str):
         self.data = data 
         self.left = None 
         self.right = None 
-    def add(self,data:int):
+    def add(self,data:int|str):
         if data == self.data:
             raise Exception(f'node {data} is already present in the tree') 
         if data < self.data:
