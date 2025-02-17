@@ -17,3 +17,12 @@ iter = singly.head
 while iter:
     print(iter.data) 
     iter = iter.next 
+# Sample Output:
+# 4
+# 5
+# 7
+# 10
+# 1
+# 2
+# 3
+# All other methods along with these methods can be applied for DoublyLinkedlist too
