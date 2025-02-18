@@ -37,13 +37,16 @@ print(root.get_level()) #0
 print(phone.get_level()) #1
 print(motorola.get_level()) #2 
 # Binary Search Tree:
-search = BST(1) 
+search = BST(15) 
 # Adding elements 
-search.add(17) 
-search.add(2)
-search.add(4) 
-search.add(3) 
-search.add(9) 
-search.add(21) 
+search.add(12) 
+search.add(27)
+search.add(14) 
+search.add(7) 
+search.add(20) 
+search.add(28) 
+search.add(23)
 #Inorder traversal
-print(search.inorder()) # [1, 2, 3, 4, 9, 17, 21]
+print(search.inorder()) # [7, 12, 14, 15, 20, 23, 27, 28]
+print(search.preorder()) # [15, 12, 7, 14, 27, 20, 23, 28]
+print(search.postorder()) # [7, 14, 12, 23, 20, 28, 27, 15]
