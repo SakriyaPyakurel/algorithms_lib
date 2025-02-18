@@ -68,4 +68,4 @@ print(search.inorder()) #['David', 'Elina', 'Ramesh', 'Sakriya', 'Sam']
 print(search.preorder()) # ['Sam', 'Sakriya', 'David', 'Elina', 'Ramesh'] 
 print(search.postorder()) # ['Ramesh', 'Elina', 'David', 'Sakriya', 'Sam']
 print(search.min()) # David
-print(search.max()) # 
+print(search.max()) # Sam 
