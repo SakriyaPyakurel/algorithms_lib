@@ -54,6 +54,10 @@ print(search.preorder()) # [15, 12, 7, 14, 27, 20, 23, 28]
 print(search.postorder()) # [7, 14, 12, 23, 20, 28, 27, 15]
 # Sum of all elements
 print(search.sum()) # 146
+# Getting min value 
+print(search.min()) #7
+# Getting max value
+print(search.max()) # 28
 # Testing with string 
 search = BST('Sam') 
 search.add('Sakriya') 
@@ -63,3 +67,5 @@ search.add('Ramesh')
 print(search.inorder()) #['David', 'Elina', 'Ramesh', 'Sakriya', 'Sam']
 print(search.preorder()) # ['Sam', 'Sakriya', 'David', 'Elina', 'Ramesh'] 
 print(search.postorder()) # ['Ramesh', 'Elina', 'David', 'Sakriya', 'Sam']
+print(search.min()) # David
+print(search.max()) # 
