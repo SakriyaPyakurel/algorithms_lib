@@ -139,6 +139,14 @@ class BST:
             elements+=self.right.postorder()
         elements.append(self.data) 
         return elements
+    def sum(self):
+        res = 0 
+        if self.left:
+            res+=self.left.sum()
+        res+=self.data 
+        if self.right:
+            res+=self.right.sum() 
+        return res
         
             
         
