@@ -48,5 +48,18 @@ search.add(28)
 search.add(23)
 #Inorder traversal
 print(search.inorder()) # [7, 12, 14, 15, 20, 23, 27, 28]
+# Preorder traversal
 print(search.preorder()) # [15, 12, 7, 14, 27, 20, 23, 28]
+#Postorder traversal
 print(search.postorder()) # [7, 14, 12, 23, 20, 28, 27, 15]
+# Sum of all elements
+print(search.sum()) # 146
+# Testing with string 
+search = BST('Sam') 
+search.add('Sakriya') 
+search.add('David') 
+search.add('Elina') 
+search.add('Ramesh') 
+print(search.inorder()) #['David', 'Elina', 'Ramesh', 'Sakriya', 'Sam']
+print(search.preorder()) # ['Sam', 'Sakriya', 'David', 'Elina', 'Ramesh'] 
+print(search.postorder()) # ['Ramesh', 'Elina', 'David', 'Sakriya', 'Sam']
