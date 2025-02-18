@@ -147,7 +147,17 @@ class BST:
         if self.right:
             res+=self.right.sum() 
         return res
-        
+    def min(self):
+        iter = self.data
+        if self.left:
+            iter = self.left.min()
+        return iter
+    def max(self):
+        iter = self.data 
+        if self.right:
+            iter = self.right.max() 
+        return iter
+                
             
         
         
