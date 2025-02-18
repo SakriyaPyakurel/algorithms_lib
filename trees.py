@@ -123,5 +123,23 @@ class BST:
         if self.right:
             elements+=self.right.inorder() 
         return elements
+    def preorder(self):
+        elements = [] 
+        elements.append(self.data) 
+        if self.left:
+            elements+=self.left.preorder()
+        if self.right:
+            elements+=self.right.preorder() 
+        return elements
+    def postorder(self):
+        elements = []
+        if self.left:
+            elements+=self.left.postorder() 
+        if self.right:
+            elements+=self.right.postorder()
+        elements.append(self.data) 
+        return elements
+        
+            
         
         
