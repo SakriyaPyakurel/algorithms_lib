@@ -157,7 +157,15 @@ class BST:
         if self.right:
             iter = self.right.max() 
         return iter
-                
-            
+    def find(self,val):
+        if val == self.data:
+            return True 
+        if val < self.data:
+            if self.left:
+                return self.left.find(val)
+        if val > self.data:
+            if self.right:
+                return self.right.find(val) 
+        return False
         
         
