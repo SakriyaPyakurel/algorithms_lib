@@ -1,4 +1,4 @@
-from trees import TreeNode,BST 
+from trees import TreeNode,BST,Graph
 root = TreeNode('Electronics') # Initializing a general tree root node 
 phone = TreeNode('Phone') 
 tv = TreeNode('tv') 
@@ -79,3 +79,20 @@ print(search.find('Elina')) #True
 print(search.find('Gagan')) #False
 search.remove('Ram') # Trying to delete a element which doesn't exist in the tree
 print(search.inorder()) # ['David', 'Elina', 'Ramesh', 'Sakriya', 'Sam']
+# Unweighted graph:
+ug = Graph()
+ug.add_node('Kathmandu','Kavre') 
+ug.add_node('Kathmandu','Dharan') 
+ug.add_node('Kathmandu','Sindhuli')
+ug.add_node('Kavre','Sindhuli') 
+ug.add_node('Dharan','Sindhuli') 
+print(ug.graph) #{'Kathmandu': ['Kavre', 'Dharan', 'Sindhuli'], 'Kavre': ['Sindhuli'], 'Dharan': ['Sindhuli']} 
+print(ug.get_shortest_path('Kathmandu','Sindhuli')) #['Kathmandu', 'Sindhuli']
+wg = Graph(True) 
+wg.add_node('Kathmandu','Kavre',100) 
+wg.add_node('Kathmandu','Dharan',200) 
+wg.add_node('Kathmandu','Sindhuli',150) 
+wg.add_node('Kavre','Sindhuli',50) 
+wg.add_node('Dharan','Sindhuli',75)
+print(wg.graph) #{'Kathmandu': {'Kavre': 100, 'Dharan': 200, 'Sindhuli': 150}, 'Kavre': {'Sindhuli': 50}, 'Dharan': {'Sindhuli': 75}}
+print(wg.get_shortest_path('Kathmandu','Sindhuli'))
