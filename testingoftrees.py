@@ -95,4 +95,4 @@ wg.add_node('Kathmandu','Sindhuli',150)
 wg.add_node('Kavre','Sindhuli',50) 
 wg.add_node('Dharan','Sindhuli',75)
 print(wg.graph) #{'Kathmandu': {'Kavre': 100, 'Dharan': 200, 'Sindhuli': 150}, 'Kavre': {'Sindhuli': 50}, 'Dharan': {'Sindhuli': 75}}
-print(wg.get_shortest_path('Kathmandu','Sindhuli'))
+print(wg.get_shortest_path('Kathmandu','Sindhuli')) #['Kathmandu', 'Sindhuli']
