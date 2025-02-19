@@ -148,10 +148,10 @@ class BST:
             res+=self.right.sum() 
         return res
     def min(self):
-        iter = self.data
-        if self.left:
-            iter = self.left.min()
-        return iter
+      current = self
+      while current.left is not None:
+        current = current.left
+      return current.data
     def max(self):
         iter = self.data 
         if self.right:
@@ -167,5 +167,21 @@ class BST:
             if self.right:
                 return self.right.find(val) 
         return False
-        
-        
+    def remove(self, val):
+      if val < self.data:
+        if self.left:
+            self.left = self.left.remove(val)
+      elif val > self.data:
+        if self.right:
+            self.right = self.right.remove(val)
+      else:
+        if self.left is None and self.right is None:
+            return None
+        if self.left is None:
+            return self.right
+        if self.right is None:
+            return self.left
+        min_val = self.right.min()
+        self.data = min_val
+        self.right = self.right.remove(min_val)
+      return self
