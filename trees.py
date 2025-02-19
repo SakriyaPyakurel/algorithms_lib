@@ -153,10 +153,10 @@ class BST:
         current = current.left
       return current.data
     def max(self):
-        iter = self.data 
-        if self.right:
-            iter = self.right.max() 
-        return iter
+        current = self 
+        while current.right is not None:
+            current=current.right 
+        return current.data
     def find(self,val):
         if val == self.data:
             return True 
@@ -181,7 +181,7 @@ class BST:
             return self.right
         if self.right is None:
             return self.left
-        min_val = self.right.min()
-        self.data = min_val
-        self.right = self.right.remove(min_val)
+        max_val = self.left.max()
+        self.data = max_val
+        self.left = self.left.remove(max_val)
       return self
