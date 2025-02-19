@@ -185,3 +185,106 @@ class BST:
         self.data = max_val
         self.left = self.left.remove(max_val)
       return self
+class Graph:
+    def __init__(self,weight=False):
+        self.graph = {} 
+        self.weight = weight
+    def add_node(self,node,edge,weight:int|float=None):
+        if self.weight:
+          if node in self.graph:
+              if weight is not None:
+                  self.graph[node][edge] = weight
+              else:
+                  raise Exception('Invalid weight supplied') 
+          else:
+              if weight is not None:
+                self.graph[node] = {edge:weight} 
+              else:
+                raise Exception('Invalid weight supplied')
+        else:
+            if node in self.graph:
+                if weight is None:
+                    self.graph[node].append(edge)
+                else:
+                    raise Exception('Cannot supply weight in non-weighted graph') 
+            else:
+                if weight is None:
+                    self.graph[node] = [edge] 
+                else:
+                    raise Exception('Cannot supply weight in non-weighted graph') 
+    def get_paths(self, start, end, path=None):
+      if path is None:
+        path = []  
+      path = path + [start]
+
+
+      if start == end:
+        return path
+
+      if start not in self.graph:
+        return []
+
+      paths = []
+
+
+      if self.weight:
+         neighbors = self.graph[start].keys()
+      else:
+        neighbors = self.graph[start]
+
+      for node in neighbors:
+        if node not in path:
+            new_paths = self.get_paths(node, end, path)
+            paths.extend(new_paths)
+      return paths
+    def get_shortest_path(self, start, end):
+      if start == end:
+        return [start]
+      if start not in self.graph:
+        return None
+
+      if not self.weight:
+        queue = [[start]]
+        visited = set()
+
+        while queue:
+            path = queue.pop(0)
+            node = path[-1]
+
+            if node == end:
+                return path
+
+            if node in visited:
+                continue
+
+            visited.add(node)
+
+            for neighbor in self.graph.get(node, []):
+                new_path = path + [neighbor]
+                queue.append(new_path)
+        return None
+
+   
+      else:
+        queue = [(0, start, [start])]
+        visited = set()
+
+        while queue:
+            queue.sort(key=lambda x: x[0])
+            cost, node, path = queue.pop(0)
+
+            if node == end:
+                return path
+
+            if node in visited:
+                continue
+
+            visited.add(node)
+
+            for neighbor, w in self.graph.get(node, {}).items():
+                if neighbor not in visited:
+                    new_path = path + [neighbor]
+                    queue.append((cost + w, neighbor, new_path))
+        return None
+
+  
