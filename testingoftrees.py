@@ -58,6 +58,9 @@ print(search.sum()) # 146
 print(search.min()) #7
 # Getting max value
 print(search.max()) # 28
+# Checking whether a value is present in the tree or not 
+print(search.find(14)) # True
+print(search.find(13)) # False
 # Testing with string 
 search = BST('Sam') 
 search.add('Sakriya') 
@@ -69,3 +72,5 @@ print(search.preorder()) # ['Sam', 'Sakriya', 'David', 'Elina', 'Ramesh']
 print(search.postorder()) # ['Ramesh', 'Elina', 'David', 'Sakriya', 'Sam']
 print(search.min()) # David
 print(search.max()) # Sam 
+print(search.find('Elina')) #True
+print(search.find('Gagan')) #False
