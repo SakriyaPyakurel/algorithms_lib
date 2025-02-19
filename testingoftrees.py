@@ -61,6 +61,9 @@ print(search.max()) # 28
 # Checking whether a value is present in the tree or not 
 print(search.find(14)) # True
 print(search.find(13)) # False
+# Removing a node from the tree 
+search.remove(20) 
+print(search.inorder()) #[7, 12, 14, 15, 23, 27, 28]
 # Testing with string 
 search = BST('Sam') 
 search.add('Sakriya') 
@@ -74,3 +77,5 @@ print(search.min()) # David
 print(search.max()) # Sam 
 print(search.find('Elina')) #True
 print(search.find('Gagan')) #False
+search.remove('Ram') # Trying to delete a element which doesn't exist in the tree
+print(search.inorder()) # ['David', 'Elina', 'Ramesh', 'Sakriya', 'Sam']
